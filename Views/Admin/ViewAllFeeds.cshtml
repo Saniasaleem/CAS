@@ -1,0 +1,68 @@
+﻿@using CAS.Models
+@{
+    //ViewBag.Title = "ViewAllFeeds";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+
+<body>
+    <div>
+
+        <br />
+    </div>
+    <div class="contact-details">
+        <p>
+            <h1>Public User's Details</h1>
+        </p>
+        <br />
+    </div>
+    <div class="row" style="width:auto; margin-right:auto; margin-left:auto; border:1px solid #808080">
+
+        <div class="table table-responsive table-bordered table-hover">
+            <table border="1">
+
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Username</th>
+                        <th>Add_Category</th>
+                        <th>CreationDate</th>
+                        <th>Location</th>
+                        <th>Keyword</th>
+                        <th>As_Age</th>
+                        <th>Description</th>
+                        <th>Ad_URL</th>
+                        <th>Bus_Pro_ID</th>
+                        <th>Pub_Pro_ID</th>
+                        <th>Delete Ad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model)
+                    {
+                        <tr>
+                            <td>@i.Id</td>
+                            <td>@i.Username</td>
+                            <td>@i.Add_Category</td>
+                            <td>@i.CreationDate</td>
+                            <td>@i.Location</td>
+                            <td>@i.Keyword</td>
+                            <td>@i.Ad_Age</td>
+                            <td>@i.Description</td>
+                            <td>@i.Ad_URL</td>
+                            <td>@i.Bus_Pro_ID</td>
+                            <td>@i.Pub_Pro_ID</td>
+                            <td>@Html.ActionLink("Delete", "DeleteAd", new { id = i.Id })</td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+
+
+    </div>
+</body>
+
+
+

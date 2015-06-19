@@ -1,0 +1,379 @@
+﻿
+@using CAS.Models
+@{
+    ViewBag.Title = "HomePage";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+<body>
+
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.localscroll-min.js"></script>
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#parent_categories").change(function () {
+                var parent_ID = $("#parent_categories").val();
+
+                $("#sub_categories option").remove();
+
+                //data represents the returned value
+                $.getJSON("/User/Select_Category?id=" + parent_ID, function (data) {
+                    $("#sub_categories").append('<option>-Select A Category-</option>');
+                    $.each(data, function (i, item) {
+                        $("#sub_categories").append('<option value=' + item.Id + '>' + item.SubName + '</option>');
+                        
+                        //alert('Id = ' + item.Id + " Name = " + item.Name);
+                    });
+
+                });
+
+            });
+
+        });
+    </script>
+
+   
+
+        <div class="response">
+            <br />
+
+        </div>
+        <!--Search anything section starts from here-->
+
+        <div class="navbar navbar-default" style="background-color: #26292E" >
+            <div class="row">
+                
+                <div class="span2">
+                    <form action="/User/Search" method="post">
+                        <input type="text" name="req" placeholder="What are you looking for?" dir="ltr" value="" style="height:30px; width:170px" />
+                    </form>
+                </div>
+                <div class="span8">
+                    <form action="/User/PostAddvertisement" method="post">
+
+                        <!--First Drop down-->
+                        <select name="parent_categories" id="parent_categories">
+                            <option value="">Select A Category</option>
+                            <option value="1">Barter</option>
+                            <option value="2">Jobs</option>
+                            <option value="3">Services</option>
+                            <option value="4">Community</option>
+                            <option value="5">Vehicles</option>
+                            <option value="6">Real Estate</option>
+                            <option value="7">For Sale</option>
+                            <option value="8">Spare Parts</option>
+                            <option value="9">Books, Sports & Hobbies</option>
+                            <option value="10">Animals</option>
+                            <option value="11">Kids & Baby Products</option>
+                            <option value="12">Fashion & Beauty</option>
+                            <option value="13">Home & Furniture</option>
+                            <option value="14">Electronics & Computers</option>
+                            <option value="15">Mobile & Tablets</option>
+                        </select>
+                        <!--Second Drop down-->
+                        <select name="sub_categories" id="sub_categories">
+                            <option value="">Select A Category</option>
+                        </select>
+
+                        <input id="submit_details" type="submit" class="btn btn-default" name="submit" value="Post Advertisement" style="height:30px; width:200px; padding-bottom:15px" />
+                    </form>
+                </div> 
+                
+                <div class="span2">
+                    <form id="contact-form" class="contact-form" action="/User/ChangeSettings?id=@ViewBag.abc" method="post">
+                        <input type="submit" id="contact-form" name="submit-changes" value="Change Profile Settings" class="submit"/>
+                    </form>
+                 </div>        
+            </div>
+     </div>
+
+        
+        <!--Search Section Ends Here-->
+        <!--Categories Section Starts From Here-->
+        <div class="row">
+            <div class="span2">
+
+            </div>
+            <div class="span3">
+                <p class="section-Jobs">
+                    <h2>Jobs</h2>
+                    @foreach (var i in @Model)
+                    {
+                        if (@i.Parent_Category_ID == 2)
+                        {
+                           <div>
+                               <a id=@i.SubName href="/User/PostAd?cat=Jobs">@i.SubName</a>
+                           </div>
+                        }
+
+                    }
+            
+                </p>
+            </div>
+            <div class="span3">
+                <p class="section-Services">
+                    <h2>Services</h2>
+                    @foreach (var i in @Model)
+                    {
+                        if (@i.Parent_Category_ID ==3 )
+                        {
+                            <div>
+                                <a id=@i.SubName href="/User/PostAd?cat=Services">@i.SubName</a>
+                            </div>
+                        }
+
+                    }
+                </p>
+                <div>
+                    <br />
+                    <br />
+                </div>
+                <p class="section-Vehicles">
+                    <h2>Vehicle</h2>
+                    @foreach (var i in @Model)
+                    {
+                        if (@i.Parent_Category_ID == 5)
+                        {
+                            <div>
+                                <a id=@i.SubName href="/User/PostAd?cat=Vehicles">@i.SubName</a>
+                            </div>
+                        }
+
+                    }
+                </p>
+
+                <p class="section-Barter">
+                    <h2>Barter</h2>
+                    @foreach (var i in @Model)
+                    {
+                        if (@i.Parent_Category_ID == 1)
+                        {
+                            <div>
+                                <a id=@i.SubName href="/User/PostAd?cat=Barter">@i.SubName</a>
+                            </div>
+                        }
+
+                    }
+                </p>
+            </div>
+            <div class="span3">
+                <p class="section-Community">
+                    <h2>Community</h2>
+                    @foreach (var i in @Model)
+                    {
+                        if (@i.Parent_Category_ID == 4)
+                        {
+                            <div>
+                                <a id=@i.SubName href="/User/PostAd?cat=Community">@i.SubName</a>
+                            </div>
+                        }
+
+                    }
+                </p>
+
+                <p class="section-For-Sale">
+                    <h2>For Sale</h2>
+                    @foreach (var i in @Model)
+                    {
+                        if (@i.Parent_Category_ID == 7)
+                        {
+                            <div>
+                                <a id=@i.SubName href="/User/PostAd?cat=For Sales">@i.SubName</a>
+                            </div>
+                        }
+
+                    }
+                </p>
+                <div>
+                    <br />
+                </div>
+                <p class="section-Home-Furniture">
+                    <h2>Furniture</h2>
+                    @foreach (var i in @Model)
+                    {
+                        if (@i.Parent_Category_ID == 13)
+                        {
+                            <div>
+                                <a id=@i.SubName href="/User/PostAd?cat=Furniture">@i.SubName</a>
+                            </div>
+                        }
+
+                    }
+                </p>
+            </div>
+            <div class="span1">
+
+            </div>
+        </div>
+        <!--Second Div Starts from here-->
+    <div class="row">
+        <div class="span2">
+
+        </div>
+        <div class="span3">
+           
+            <p class="section-Kids-Products">
+                <h2>Kids & Baby Products</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 11)
+                    {
+                        <div>
+                            <a id=@i.SubName href="/User/PostAd?cat=Kids & Baby Products">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+            </p>
+
+        </div>
+        <div class="span3">
+           
+            <p class="section-Fashion-&-Beauty-Products">
+                <h2>Fashion & Beauty Products</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 12)
+                    {
+                        <div>
+                            <a id=@i.SubName href="/User/PostAd?cat=Fashion & Beauty Products">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+
+        </div>
+        <div class="span3">
+            <p class="section-Books-Sports-Hobbies">
+                <h2>Books, Sports & Hobbies</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 9)
+                    {
+                        <div>
+                            <a id=@i.SubName href="/User/PostAd?cat=Books, Sports & Hobbies">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span1">
+
+        </div>
+    </div>
+
+        <!--Second Div Ends in here-->
+
+    <!--Third Div Starts From Here-->
+    <div class="row">
+        <div class="span2">
+
+        </div>
+        <div class="span3">
+            <p class="section-Real-Estate">
+                <h2>Real Estate</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 6)
+                    {
+                        <div>
+                            <a id=@i.SubName href="/User/PostAd?cat=Real Estate">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span3">
+            <p class="section-Spare-Parts">
+                <h2>Spare Parts</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 8)
+                    {
+                        <div>
+                            <a id=@i.SubName href="/User/PostAd?cat=Spare Parts">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span3">
+            <p class="section-Animals">
+                <h2>Animals</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 10)
+                    {
+                        <div>
+                            <a id=@i.SubName href="/User/PostAd?cat=Animals">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span1">
+
+        </div>
+    </div>
+<!--Fourth Div Starts From Here-->
+    <div class="row">
+        <div class="span2">
+
+        </div>
+        <div class="span3">
+            <p class="section-Electronics">
+                <h2>Electronics & Computers</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 14)
+                    {
+                        <div>
+                            <a id=@i.SubName href="/User/PostAd?cat=Electronics & Computers">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span3">
+            <p class="section-Mobile">
+                <h2>Mobile & Tablets</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 15)
+                    {
+                        <div>
+                            <a id=@i.SubName href="/User/PostAd?cat=Mobile & Tablets">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span3">
+
+        </div>
+        <div class="span1">
+
+        </div>
+    </div>
+        <!--Categories Section Ends Here-->
+
+
+
+    </body>

@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "PostAd";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+@model CAS.Models.Advertisement
+
+
+<body>
+
+
+    @if(ViewBag.info != null)
+    {
+        <script>
+            alert('File Uploaded successfully!');
+        </script>
+        
+    }
+
+
+    <div class="response">
+        <br />
+        <br />
+    </div>
+
+    <!--Post Ad Section Starts-->
+    <div class="row">
+        <div class="span4">
+
+        </div>
+        <div class="span6">
+            
+            <form id="contact-form" action="/User/LoadData" method="post" enctype="multipart/form-data" class="contact-form">
+              
+                <p class="title">
+                    <h3>Enter following details carefully.</h3>
+                </p>
+                <p class="user_name" style="visibility:hidden">
+                    <input id="user_name" type="text" placeholder="Your Name" value="@Session["Username"]" name="Username" />
+                </p>
+                <p class="Category_of_ad">
+                    <input id="add_category" type="text" placeholder="Add_Category" value=@ViewBag.abc name="Add_Category" />
+                </p>
+                <p class="post_date" style="visibility:hidden">
+                    <input id="post_date" type="datetime"  name="CreationDate" value=@ViewBag.date/>
+                </p>
+
+                <p class="user_location">
+                    <input id="user_location" type="text" placeholder="Enter your location" value="" name="Location" />
+                </p>
+                <p class="keyword">
+                    <input id="keyword" type="text" placeholder="Keyword for your addvertisement." value="" name="Keyword" />
+                </p>
+                <p class="ad_age">
+                    <input id="ad_age" type="text" placeholder="PG17 / For all" value="" name="Ad_Age" />
+                </p>
+
+                <p class="description">
+                    <textarea id="description" placeholder="What are you about to post?" name="Description" rows="15" cols="40"></textarea>
+                </p>
+
+                <p class="select_file">
+
+                   <input type="file" name="file"  id="File"/>
+                   
+                </p>
+                <input type="submit"  name="Upload" value="Upload" />
+
+            </form>
+        </div>
+        <div class="span2">
+
+        </div>
+    </div>
+    <!--Post Ad Section Ends-->
+</body>

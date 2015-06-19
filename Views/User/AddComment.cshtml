@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "AddComment";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+
+@model CAS.Models.Advertisement
+
+
+<body>
+
+    <div class="row">
+        <div class="span1">
+
+        </div>
+
+        <div class="span6">
+            <div class="container" style="background-color:whitesmoke">
+                <div class="thumbnail">
+
+                    <a id="Username" name="Username" href="#" style="color:black"><h3 style="background-color:grey; width:15%">@Model.Username</h3></a>
+                    <a id="CreationDate" name="CreationDate" href="#" style="background-color:grey; width:15%"><abbr title="" data-utime="1433975633" data-shorten="1" class="_5ptz timestamp livetimestamp">@Model.CreationDate</abbr></a>
+                    <img src="~/Files/@Model.File_Name" alt="Image Uploading Failed" style="width:100%" /><br /><br />
+                    <p id="Description">@Model.Description</p>
+
+                    <form id="feed-form" class="contact-form" action="/User/SubmitComment?id=@Model.Id" method="post">
+                        <input type="text" id="add-comment" value="" name="Comment" placeholder="Add Comment..." style="" />
+                        <input id="comment" type="submit" placeholder="Add Comment" class="btn btn-default" value="Submit" name="Comment-btn" style="width:130px; height:40px" />
+                    </form>
+                    @foreach (var item in Model.Comments)
+                    {
+                        <p class="contact-form" id="contact-form">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Comment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>@item.User.Username</td>
+                                        <td>@item.Comment1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </p>
+
+                        @*<button id="" class="btn btn-default" value="Like" name="Like-btn" onclick="" style="width:60px; height:40px">Like</button>*@
+                        @*<div class="fb-comments" data-href="www.blog-to-money.blogspot.com" data-num-posts="10" data-width="500"></div>*@
+                        <hr />
+
+                    }
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="span5">
+
+        </div>
+    </div>
+
+</body>

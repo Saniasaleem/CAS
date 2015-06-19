@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+<body>
+    @*Admin Profile Section Begins Here*@
+    <div class="row">
+
+        <div class="span8">
+
+            <form id="contact-form" class="admin-profile-form" action="/Admin/AdminProfile" style="margin-left:50px">
+                <p class="Admin-Profile">
+                    <h1>Choose an Option</h1>
+                </p>
+                <p class="View-Bus-User">
+
+                    <a id="View-Bus-User" class="submit" href="../Admin/ViewBusinessUsers" style="width:30%">View Business Users</a><br />
+                </p>
+                <p class="View-Pub-User">
+
+                    <a id="View-Pub-User" class="submit" href="../Admin/ViewPublicUsers" style="width:30%">View Public Users</a><br />
+                </p>
+                @*<p class="Delete-User">
+                        <a id="Delete-User" class="submit" href="#" style="width:20%">Delete User</a><br />
+                    </p>
+                    <p class="Update-Ad">
+
+                        <a id="Update-Ad" class="submit" href="#" style="width:20%">Update Add</a><br />
+                    </p>*@
+                <p class="View-Ads">
+                    <a id="View-Ads" class="submit" href="../Admin/ViewAllFeeds" style="width:30%">View All Feeds</a><br />
+                </p>
+                <p class="Add-Category">
+                    <a id="View-Ads" class="submit" href="../Admin/AddCategory" style="width:30%">Add Category</a><br />
+                </p>
+
+                <p class="View-Category">
+                    <a id="View-Ads" class="submit" href="../Admin/ViewCategories" style="width:30%">View Category</a><br />
+                </p>
+                <p class="Delete-Category">
+                    <a id="Account-Setting" class="submit" href="/Admin/DeleteCategory" style="width:30%">Delete Category</a><br />
+                </p>
+                <div id="response">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+            </form>
+        </div>
+        <div class="span4">
+            <br /><br />
+            <p>
+                <h3>Account Settings</h3>
+
+            </p>
+            <p>
+                <ul>
+                    <li>Update Profile</li>
+                    <li>Change Password</li>
+                </ul>
+            </p>
+
+
+        </div>
+
+
+    </div>
+    @*Registration Section Ends Here*@
+</body>
+

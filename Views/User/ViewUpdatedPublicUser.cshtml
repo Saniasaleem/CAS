@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "ViewUpdatedPublicUser";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+@using CAS.Models
+<body>
+    <div>
+
+        <br />
+    </div>
+    <div class="contact-details">
+        <p>
+            <h1>Public User's Details</h1>
+        </p>
+        <br />
+    </div>
+    <div class="row" style="width:auto; margin-right:auto; margin-left:auto; border:1px solid #808080">
+
+        <div class="table table-responsive table-bordered table-hover">
+            <table border="1">
+
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Address</th>
+                        <th>Contact</th>
+                        <th>Country</th>
+                        <th>Postal Code</th>
+                        <th>Membership</th>
+                        <th>Signup Date</th>
+                        <th>Roll</th>
+                        <th>User_ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                        <tr>
+                            <td>@Model.Id</td>
+                            <td>@Model.Username</td>
+                            <td>@Model.Password</td>
+                            <td>@Model.Email</td>
+                            <td>@Model.FName</td>
+                            <td>@Model.LName</td>
+                            <td>@Model.Address</td>
+                            <td>@Model.Contact</td>
+                            <td>@Model.Country</td>
+                            <td>@Model.PostalCode</td>
+                            <td>@Model.Membership</td>
+                            <td>@Model.CreationDate</td>
+                            <td>@Model.Roll</td>
+                            <td>@Model.User_ID</td>
+
+                        </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+
+    </div>
+</body>
+
+

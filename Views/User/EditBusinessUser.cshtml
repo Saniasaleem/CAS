@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "EditBusinessUser";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+@model CAS.Models.Business_Profile
+<body>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="row">
+
+                        <div class="span3">
+
+                        </div>
+                        <div class="span6">
+
+                            <form id="contact-form" action="/User/CommitEditing" method="post" class="contact-form">
+
+                                <p>
+                                    <h2>Update Business Profile Carefully.</h2>
+                                </p>
+                                
+                                <p class="update-fName">
+                                    <input id="update_fname" type="text" required placeholder="First Name" value="" name="FName" />
+                                </p>
+
+                                <p class="update_lname">
+                                    <input id="update_lname" type="text" required placeholder="Last Name" value="" name="LName" />
+                                </p>
+
+                                <p class="update_password">
+                                    <input id="update_password" type="password" required placeholder="Password" value="" name="Password" />
+                                </p>
+
+                                <p class="update_email">
+                                    <input id="update_email" type="email" required placeholder="Email ID" value="" name="Email" />
+                                </p>
+
+                                <p class="update_organization">
+                                    <input id="update_organization" type="text" required placeholder="Organization Name" value="" name="Org_Name" />
+                                </p>
+
+                                
+
+                                <p class="update_address">
+                                    <input id="update_address" type="text" required placeholder="Address" value="" name="Address" />
+                                </p>
+
+                                <p class="update_contact">
+                                    <input id="update_contact" type="text" required placeholder="Contact Number" value="" name="Contact" />
+                                </p>
+
+
+                                <p class="update_country">
+                                    <input id="update_country" type="text" required placeholder="Country" value="" name="Country" />
+                                </p>
+
+                                <p class="update_postalcode">
+                                    <input id="update_postalcode" type="text" required placeholder="Postal Code" value="" name="PostalCode" />
+                                </p>
+
+
+                                <p class="update_payment_method">
+                                    <input id="update_payment_method" type="text" required placeholder="Online" value="" name="PaymentMethod" />
+                                </p>
+
+                                <p class="update_accountNo">
+                                    <input id="update_accountNo" type="text" required placeholder="Account Number" value="" name="AccountNo" />
+                                </p>
+
+                                <p class="update_accountName">
+                                    <input id="update_accountName" type="text" required placeholder="Account Holder's Name'" value="" name="AccountHolder" />
+                                </p>
+
+                                <p class="update_cardNo">
+                                    <input id="update_cardNo" type="text" required placeholder="Visa/Debt Card Number" value="" name="CardNo" />
+                                </p>
+
+                                <p class="update_name_on_card">
+                                    <input id="update_name_on_card" type="text" required placeholder="Name On Card" value="" name="NameOnCard" />
+                                </p>
+
+                                <p class="update_expiration_date">
+                                  <label>Expiration Date of Card:</label> 
+                                  <input id="update_expiration_date" type="date" required name="ExpirationDate" />
+                                </p>
+                                <!--Membership Check is necessary-->
+                                <p class="update_membership" style="visibility:hidden">
+                                    <input id="update_membership" type="text" required value="@Model.Membership" placeholder="Membership" name="Membership" />
+                                </p>
+                                <p class="update-id" style="visibility:hidden">
+                                    <input id="update_Id" type="text" value="@Model.Id" name="Id" />
+                                </p>
+                                <p class="update-User-id" style="visibility:hidden">
+                                    <input id="update_User_Id" type="text" value="@Model.User_ID" name="User_ID" />
+                                </p>
+                                <p class="update_date" style="visibility:hidden">
+                                    <input id="update_date" type="date" value="@Model.CreationDate" name="CreationDate" />
+                                </p>
+
+                                <p class="update_roll" style="visibility:hidden">
+                                    <input id="update_roll" type="text" placeholder="Admin/ User" value="@Model.Roll" name="Roll" />
+                                </p>
+                                <p class="update_username" style="visibility:hidden">
+                                    <input id="update_username" type="text" placeholder="Username" value="@Model.Username" name="Username" />
+                                </p>
+                                <p class="submit_details">
+                                    <input id="submit_details" class="submit" type="submit" name="submit" value="Save Changes" />
+                                </p>
+
+                                <div id="response">
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="span3">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+

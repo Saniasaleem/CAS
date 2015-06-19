@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+@model   IEnumerable<CAS.Models.Advertisement>
+<body>
+
+    <div class="row">
+        <div class="span1">
+
+        </div>
+
+        <div class="span6">
+            <div class="container" style="background-color:whitesmoke">
+                <div class="thumbnail">
+                    @if(ViewBag.result!=null)
+                    {
+                        <p>Sorry No Result Found.</p>
+                    }
+                    else
+                    {
+                        
+                    
+                        <form id="feed-form" class="contact-form">
+                        <fieldset>
+                            <legend>New Feeds</legend>
+
+                            @foreach (var i in Model)
+                            {
+
+                                <a id="Username" name="Username" href="#" style="color:black"><h3 style="color:black">@i.Username</h3></a>
+                                <a id="CreationDate" name="CreationDate" href="#"><abbr title="" data-utime="1433975633" data-shorten="1" class="_5ptz timestamp livetimestamp">@i.CreationDate</abbr></a>
+                                <img src="~/Files/@i.File_Name" alt="Image Uploading Failed" style="width:100%" /><br /><br />
+                                <p id="Description">@i.Description</p>
+                                <hr />
+                            }
+
+                        </fieldset>
+                    </form>
+  
+                    }
+                    
+                </div>
+            </div>
+
+        </div>
+        <div class="span5">
+
+        </div>
+    </div>
+
+</body>

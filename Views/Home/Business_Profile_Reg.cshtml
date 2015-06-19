@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "Business_Profile_Reg";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model CAS.Models.Business_Profile
+
+
+<body>
+    <h1>Business Profile Registration</h1>
+    <script src="~/Script/jquery1.8.2.js"></script>
+
+    @*<script>
+        $(document).ready(function () {
+            alert("I am 1");
+            $("#register_membership").hide();
+            alert("2");
+        });
+
+    </script>*@
+    <div class="row">
+
+    </div>
+    <!--Registration Form Group Starts from here-->
+
+    <div class="form-group">
+        <div class="row">
+
+            <div class="span3">
+
+            </div>
+            <div class="span6">
+
+                <form id="contact-form" action="/Home/Submit_Result" method="post" class="contact-form"> 
+
+                    <p>
+                        <h2>Create Your Business Profile Carefully.</h2>
+                    </p>
+                    <p class="register-fName">
+                        <input id="register_fname" type="text" required placeholder="First Name" value="" name="FName" />
+                    </p>
+
+                    <p class="register_lname">
+                        <input id="register_lname" type="text" required placeholder="Last Name" value="" name="LName" />
+                    </p>
+
+                    <p class="register_username">
+                        <input id="register_username" type="text" required placeholder="Username" value="" name="Username" />
+                    </p>
+
+                    <p class="register_password">
+                        <input id="register_password" type="password" required placeholder="Password" value="" name="Password" />
+                    </p>
+
+                    <p class="register_roll">
+                        <input id="register_roll" type="text" required placeholder="Admin/ User" value="" name="Roll" />
+                    </p>
+
+                    <p class="register_email">
+                        <input id="register_email" type="email" required placeholder="Email ID" value="" name="Email" />
+                    </p>
+
+                    <p class="register_organization">
+                        <input id="register_organization" type="text" required placeholder="Organization Name" value="" name="Org_Name" />
+                    </p>
+                    <!--Creation date-->
+                    <p class="register_date" style="visibility:hidden">
+                        <input id="register_date" type="datetime"  name="CreationDate" value=@ViewBag.date />
+                    </p>
+
+                    <p class="register_address">
+                        <input id="register_address" type="text" required placeholder="Address" value="" name="Address" />
+                    </p>
+
+                    <p class="register_contact">
+                        <input id="register_contact" type="text" required placeholder="Contact Number" value="" name="Contact" />
+                    </p>
+
+
+                    <p class="register_country">
+                        <input id="register_country" type="text" required placeholder="Country" value="" name="Country" />
+                    </p>
+
+                    <p class="register_postalcode">
+                        <input id="register_postalcode" type="text" required placeholder="Postal Code" value="" name="PostalCode" />
+                    </p>
+
+
+                    <p class="register_payment_method">
+                        <input id="register_payment_method" type="text" required placeholder="Online" value="" name="PaymentMethod" />
+                    </p>
+
+                    <p class="register_accountNo">
+                        <input id="register_accountNo" type="text" required placeholder="Account Number" value="" name="AccountNo" />
+                    </p>
+
+                    <p class="register_accountName">
+                        <input id="register_accountName" type="text" required placeholder="Account Holder's Name'" value="" name="AccountHolder" />
+                    </p>
+
+                    <p class="register_cardNo">
+                        <input id="register_cardNo" type="text" required placeholder="Visa/Debt Card Number" value="" name="CardNo" />
+                    </p>
+
+                    <p class="register_name_on_card">
+                        <input id="register_name_on_card" type="text" required placeholder="Name On Card" value="" name="NameOnCard" />
+                    </p>
+                    <p>
+                        <h3>Expiration Date of Card</h3>
+                    </p>
+                    <p class="register_expiration_date">
+                        <input id="register_expiration_date" type="date" required name="ExpirationDate" />
+                    </p>
+                    <!--Membership Check is necessary-->
+                    <p class="register_membership" style="visibility:hidden">
+                        <input id="register_membership" type="text" value=@ViewBag.abc name="Membership" /> 
+                    </p>
+                    <p class="submit_details">
+                        <input id="submit_details" class="submit"  type="submit" name="submit" value="Signup" />
+                    </p>
+
+                    <div id="response">
+
+                    </div>
+                </form>
+            </div>
+            <div class="span3">
+
+            </div>
+        </div>
+    </div>
+    <!-- register Section Ends Here-->
+
+
+
+</body>
+

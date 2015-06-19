@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "GoToLogin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title></title>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="span3">
+
+        </div>
+        <div class="span6">
+            <div class="response">
+                <br /><br /><br />
+
+
+            </div>
+            <form id="contact-form" class="contact-form" action="/Home/VerifyLogin" style="margin-left:50px" method="post">
+                <fieldset class="clearfix">
+                    <p>
+                        You already have an account.
+                    </p>
+                    <p class="login-username">
+                        <span class="fontawesome-user"></span>
+                        <input id="login-username" type="text" name="Username" value="Username" onblur="if(this.value == '') this.value = 'Username'" onfocus="if(this.value == 'Username') this.value = ''" required />
+                    </p>
+
+                    <p class="login-password">
+                        <span class="fontawesome-lock"></span>
+                        <input id="login-password" type="password" name="Password" value="Password" onblur="if(this.value == '') this.value = 'Password'" onfocus="if(this.value == 'Password') this.value = ''" required />
+                    </p>
+
+                </fieldset>
+                <!--Start Working From Here-->
+                <p class="login-category">
+                    <input type="submit" id="submit-login" class="submit" value="Login" style="width:100%"/>
+                </p>
+
+                <p>
+                    Not a member?
+                    <a href="/Home/GoToRegistration"><span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span> Sign up now</a>
+                    <span class="fontawesome-arrow-right"></span>
+                </p>
+            </form>
+            <div class="response">
+                <br /><br /><br />
+                <br /><br /><br />
+
+            </div>
+        </div>
+
+        <div class="span3">
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+

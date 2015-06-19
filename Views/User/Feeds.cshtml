@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Feeds";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+
+@model   IEnumerable<CAS.Models.Advertisement>
+             
+<body>
+    @*<script>
+    (function (d) {
+        var js, id = 'facebook-jssdk'; if (d.getElementById(id)) { return; }
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));</script>*@
+
+
+    @*<img src="~/Files/" />*@
+    <div class="row">
+        <div class="span1">
+
+        </div>
+
+        <div class="span6">
+            <div class="container" style="background-color:whitesmoke">
+                <div class="thumbnail">
+
+                    
+
+                    @foreach (var i in Model)
+                            {
+                                <form id="feed-form" class="contact-form" action="/User/AddComment?id=@i.Id" method="post" >
+                                    <fieldset>
+                                        <a id="Username" name="Username" href="#"><h3 style="color:black; width:15%">@i.Username</h3></a>
+                                        <a id="CreationDate" name="CreationDate" href="#"><abbr title="" data-utime="1433975633" data-shorten="1" class="_5ptz timestamp livetimestamp" style="color:gray">@i.CreationDate</abbr></a>
+                                        <img src="~/Files/@i.File_Name" alt="Image Uploading Failed" style="width:100%" /><br /><br />
+                                        <p id="Description" style="color:black">@i.Description</p>
+                                        @*<div id="postLike"></div>*@
+                                        @*<button id="" class="btn btn-default" value="Like" name="Like-btn" onclick="AddLike" style="width:60px; height:40px">Like</button>*@
+                                        <input id="comment" type="submit" placeholder="Add Comment" class="btn btn-default" value="Add Comment" name="Comment-btn" style="width:130px; height:40px" />
+                                        @*<div class="fb-comments" data-href="www.blog-to-money.blogspot.com" data-num-posts="10" data-width="500"></div>*@
+                                        <hr />
+                                    </fieldset>
+                                </form>
+
+                    }
+                </div>
+            </div>
+           
+            </div>
+
+        <div class="span5">
+
+        </div>
+    </div>
+        @*<script type="text/javascript">
+            $(document).ready(function () {
+                $("postLike").
+
+               
+            });
+        </script>*@        
+
+</body>

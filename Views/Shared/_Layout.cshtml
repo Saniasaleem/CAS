@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+
+
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Brushed | Responsive One Page Template</title>
+    <meta name="description" content="Insert Your Site Description" />
+    <!-- Mobile Specifics -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="320" />
+    <!-- Mobile Internet Explorer ClearType Technology -->
+    <!--[if IEMobile]>  <meta http-equiv="cleartype" content="on">  <![endif]-->
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/table.css" type="text/css" />
+
+
+    <!--Added by me-->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/bootstrap-responsive.min.css" rel="stylesheet" />
+
+
+    <!-- Main Style -->
+    <link href="~/Content/main.css" rel="stylesheet">
+    <!-- Supersized -->
+    <link href="~/Content/supersized.css" rel="stylesheet">
+    <link href="~/Content/supersized.shutter.css" rel="stylesheet">
+    <!-- FancyBox -->
+    <link href="~/Content/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <!-- Font Icons -->
+    <link href="~/Content/fonts.css" rel="stylesheet">
+    <!-- Shortcodes -->
+    <link href="~/Content/shortcodes.css" rel="stylesheet">
+    <!-- Responsive -->
+    <link href="~/Content/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="~/Content/responsive.css" rel="stylesheet">
+    <!-- Supersized -->
+    <link href="~/Content/supersized.css" rel="stylesheet">
+    <link href="~/Content/supersized.shutter.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="#">
+    <link rel="apple-touch-icon" href="#">
+    <link rel="apple-touch-icon" sizes="114x114" href="#">
+    <link rel="apple-touch-icon" sizes="72x72" href="#">
+    <link rel="apple-touch-icon" sizes="144x144" href="#">
+    <!-- Modernizr -->
+    <script src="~/Scripts/modernizr.js"></script>
+    <script src="~/Scripts/waypoints.js"></script> <!-- WayPoints -->
+    <script src="~/Scripts/waypoints-sticky.js"></script> <!-- Waypoints for Header -->
+    <!-- Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'Insert Your Code']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <!-- End Analytics -->
+
+</head>
+
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="sticky-nav navbar navbar-default navbar-fixed-top">
+            <a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
+
+            <div id="logo">
+                <a id="goUp" href="#home-slider" title="Brushed | Responsive One Page Template">BRUSHED</a>
+            </div>
+
+            <nav id="menu">
+                <ul id="menu-nav">
+
+                    <li class="current"><a href="../Home/Index">Home</a></li>
+                    <li><a href="/Home/OurWork">Our Work</a></li>
+                    <li><a href="/Home/AboutUs">About Us</a></li>
+                    <li><a href="/Home/Contact">Contact</a></li>
+                    <li><a href="/Home/GoToLogin">Login</a></li>
+                    <li><a href="/Home/GoToRegistration">Signup</a></li>
+
+                    @*<li class="current"><a href="../Home/Index">Home</a></li>
+                            <li><a href="..#work">Our Work</a></li>
+                            <li><a href="..#about">About Us</a></li>
+                            <li><a href="..#contact">Contact</a></li>
+                            <li><a href="/Shortcodes/Index" class="external">Shortcodes</a></li>
+                        <li><a href="../User/HomePage" class="external">Home Page</a></li>
+                        <li><a id="Show-Timeline" href="/User/Feeds">Timeline</a></li>
+                        <li><a href="../User/Logout" class="external">Logout</a></li>*@
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <!-- End Header -->
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+
+
+
+
+    <footer>
+        <p class="credits">&copy;2013 Brushed. <a href="http://themes.alessioatzeni.com/html/brushed/" title="Brushed | Responsive One Page Template">Brushed Template</a> by <a href="http://www.alessioatzeni.com/" title="Alessio Atzeni | Web Designer &amp; Front-end Developer">Alessio Atzeni</a></p>
+    </footer>
+    <!-- End Footer -->
+    <!-- Back To Top -->
+    <a id="back-to-top" href="#">
+        <i class="font-icon-arrow-simple-up"></i>
+    </a>
+    <!-- End Back to Top -->
+    <!-- Js -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jQuery Core -->
+    <!--Added by me-->
+    <script src="~/Script/jquery.min.js"></script>
+    <!--Added by me-->
+    <script src="~/Scripts/bootstrap.min.js"></script> <!-- Bootstrap -->
+    <script src="~/Scripts/supersized.3.2.7.min.js"></script> <!-- Slider -->
+    @*<script src="~/Scripts/waypoints.js"></script> <!-- WayPoints -->
+        <script src="~/Scripts/waypoints-sticky.js"></script> <!-- Waypoints for Header -->*@
+    <script src="~/Scripts/jquery.isotope.js"></script> <!-- Isotope Filter -->
+    <script src="~/Scripts/jquery.fancybox.pack.js"></script> <!-- Fancybox -->
+    <script src="~/Scripts/jquery.fancybox-media.js"></script> <!-- Fancybox for Media -->
+    <script src="~/Scripts/jquery.tweet.js"></script> <!-- Tweet -->
+    <script src="~/Scripts/plugins.js"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
+    <script src="~/Scripts/main.js"></script> <!-- Default JS -->
+    <!-- End Js -->
+
+</body>
+</html>

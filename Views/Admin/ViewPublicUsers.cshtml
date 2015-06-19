@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "ViewPublicUsers";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+@using CAS.Models
+<body>
+    <div>
+
+        <br />
+    </div>
+    <div class="contact-details">
+        <p>
+            <h1>Public User's Details</h1>
+        </p>
+        <br />
+    </div>
+    <div class="row" style="width:auto; margin-right:auto; margin-left:auto; border:1px solid #808080">
+
+        <div class="table table-responsive table-bordered table-hover">
+            <table border="1">
+
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Address</th>
+                        <th>Contact</th>
+                        <th>Country</th>
+                        <th>Postal Code</th>
+                        <th>Membership</th>
+                        <th>Signup Date</th>
+                        <th>Roll</th>
+                        <th>User_ID</th>
+                        <th>Edit Details</th>
+                        <th>Delete User</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model)
+                    {
+                        <tr>
+                            <td>@i.Id</td>
+                            <td>@i.Username</td>
+                            <td>@i.Password</td>
+                            <td>@i.Email</td>
+                            <td>@i.FName</td>
+                            <td>@i.LName</td>
+                            <td>@i.Address</td>
+                            <td>@i.Contact</td>
+                            <td>@i.Country</td>
+                            <td>@i.PostalCode</td>
+                            <td>@i.Membership</td>
+                            <td>@i.CreationDate</td>
+                            <td>@i.Roll</td>
+                            <td>@i.User_ID</td>
+
+                            <td>@Html.ActionLink("Edit", "EditPublicUser", new { id = i.Id })</td>
+                            <td>@Html.ActionLink("Delete", "DeletePublicUser", new { id = i.Id })</td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+
+
+    </div>
+</body>
+

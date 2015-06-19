@@ -1,0 +1,314 @@
+﻿@{
+    ViewBag.Title = "ViewDetails";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+@using CAS.Models
+
+
+<body>
+
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.localscroll-min.js"></script>
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+
+    
+    <script type="text/javascript">
+
+        function showalert() {
+
+            alert("You should be a user to post this Advertisement.");
+
+        }
+
+    </script>
+
+    <!--Page Start from Here-->
+    <div class="response">
+        <br /><br />
+    </div>
+    
+    <!--Categories Section Starts From Here-->
+    <div class="row">
+        <div class="span2">
+
+        </div>
+        <div class="span3">
+            <p class="section-Jobs">
+                <h2>Jobs</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 2)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()" >@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span3">
+            <p class="section-Services">
+                <h2>Services</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 3)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+            </p>
+            <div>
+                <br />
+                <br />
+            </div>
+            <p class="section-Vehicles">
+                <h2>Vehicle</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 5)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+            </p>
+
+            <p class="section-Barter">
+                <h2>Barter</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 1)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+            </p>
+        </div>
+        <div class="span3">
+            <p class="section-Community">
+                <h2>Community</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 4)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+            </p>
+
+            <p class="section-For-Sale">
+                <h2>For Sale</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 7)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+            </p>
+            <div>
+                <br />
+            </div>
+            <p class="section-Home-Furniture">
+                <h2>Furniture</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 13)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+            </p>
+        </div>
+        <div class="span1">
+
+        </div>
+    </div>
+    <!--Second Div Starts from here-->
+    <div class="row">
+        <div class="span2">
+
+        </div>
+        <div class="span3">
+
+            <p class="section-Kids-Products">
+                <h2>Kids & Baby Products</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 11)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+            </p>
+
+        </div>
+        <div class="span3">
+
+            <p class="section-Fashion-&-Beauty-Products">
+                <h2>Fashion & Beauty Products</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 12)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+
+        </div>
+        <div class="span3">
+            <p class="section-Books-Sports-Hobbies">
+                <h2>Books, Sports & Hobbies</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 9)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span1">
+
+        </div>
+    </div>
+
+    <!--Second Div Ends in here-->
+    <!--Third Div Starts From Here-->
+    <div class="row">
+        <div class="span2">
+
+        </div>
+        <div class="span3">
+            <p class="section-Real-Estate">
+                <h2>Real Estate</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 6)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span3">
+            <p class="section-Spare-Parts">
+                <h2>Spare Parts</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 8)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span3">
+            <p class="section-Animals">
+                <h2>Animals</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 10)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span1">
+
+        </div>
+    </div>
+    <!--Fourth Div Starts From Here-->
+    <div class="row">
+        <div class="span2">
+
+        </div>
+        <div class="span3">
+            <p class="section-Electronics">
+                <h2>Electronics & Computers</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 14)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span3">
+            <p class="section-Mobile">
+                <h2>Mobile & Tablets</h2>
+                @foreach (var i in @Model)
+                {
+                    if (@i.Parent_Category_ID == 15)
+                    {
+                        <div>
+                            <a id=@i.SubName href="#" onclick="showalert()">@i.SubName</a>
+                        </div>
+                    }
+
+                }
+
+            </p>
+        </div>
+        <div class="span3">
+
+        </div>
+        <div class="span1">
+
+        </div>
+    </div>
+    <!--Categories Section Ends Here-->
+
+
+
+</body>

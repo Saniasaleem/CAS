@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+<body>
+    <div>
+        <br />
+    </div>
+    <div class="row">
+        <div class="span2">
+
+        </div>
+        <div class="span8">
+            <div>
+                <br />
+            </div>
+            <form id="contact-form" action="/Admin/ItemAdded" method="post" class="contact-form">
+
+                <p>
+                    <h1>Add a new category</h1>
+                </p>
+                <p>
+                    <input type="text" id="parent-category-name" name="Name" value="" placeholder="Parent Category" required/>
+                </p>
+                <p>
+                    <input type="text" id="sub-category" name="SubName" value="" required placeholder="Sub Category"/>
+                </p>
+
+                <p class="submit-details">
+                    <input id="submit_details" class="submit" type="submit" name="submit" value="Add Category" />
+                </p>
+            </form>
+            <div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+        <div class="span2">
+
+        </div>
+    </div>
+</body>

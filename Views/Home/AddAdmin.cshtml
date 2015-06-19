@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if (IE 9)]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+
+    <title></title>
+</head>
+
+
+<body>
+
+
+    <!--Adim Form Group Starts from here-->
+
+    <div class="form-group">
+        <h2>Student's Detail</h2>
+
+        <form action="/Registration/AddAdmin" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="admin_fname">
+                        <input id="admin_fname" type="text" required placeholder="First Name" value="" name="FName" />
+                    </p>
+
+                    <p class="admin_lname">
+                        <input id="admin_lname" type="text" required placeholder="Last Name" value="" name="LName" />
+                    </p>
+
+                    <p class="admin_username">
+                        <input id="admin_username" type="text" required placeholder="Username" value="" name="Username" />
+                    </p>
+
+                    <p class="admin_password">
+                        <input id="admin_password" type="password" required placeholder="Password" value="" name="Password" />
+                    </p>
+
+                    <p class="admin_email">
+                        <input id="admin_email" type="text" required placeholder="Email ID" value="" name="Email" />
+                    </p>
+
+                    <p class="admin_contact">
+                        <input id="admin_contact" type="text" required placeholder="Contact Number" value="" name="Contact" />
+                    </p>
+
+                    <p class="admin_address">
+                        <input id="admin_address" type="text" required placeholder="Address" value="" name="Address" />
+                    </p>
+
+                    <p class="admin_country">
+                        <input id="admin_country" type="text" required placeholder="Country" value="" name="Country" />
+                    </p>
+
+                    <p class="signup_date">
+                        <input id="" type="datetime" required value="" name="CreationDate" />
+                    </p>
+
+                    <p class="submit_details">
+                        <a id="submit_details" class="submit" href="#">Sign Up</a>
+                    </p>
+                </div>
+
+                <div id="response">
+
+                </div>
+
+                <div class="col-md-6 navbar-right">
+                    <img src="~/logo.png" style="height:500px; width:500px" />
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <!-- Admin Section Ends Here-->
+
+
+
+</body>
+</html>

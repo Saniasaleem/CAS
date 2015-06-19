@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "GoToRegistration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+    <title>Registration Form</title>
+</head>
+<body>
+    @*Registration Form Section*@
+    <div class="row">
+        <div class="span10"> 
+           
+                <p class="choose-membership">
+                    <h1>Choose a Membership to register yourself.</h1>
+                </p>
+            <form id="contact-form" class="contact-form" action="/Home/Business_Profile_Reg?mem=Gold" method="post">
+                <p class="registeration" style="margin-left:50px">
+                    <input type="submit" id="submit-gold" style="width:30%" name="Gold" value="Gold"/>
+                </p>
+            </form>
+                <br />
+            <form id="contact-form" class="contact-form" action="/Home/Business_Profile_Reg?mem=Silver" style="margin-left:50px;" method="post">
+                <p>
+                    <input type="submit" id="submit-gold" style="width:30%" name="Silver" value="Silver" />
+                </p>
+            </form>
+            <br />
+
+            <form id="contact-form" class="contact-form" action="/Home/Public_Profile_Reg?mem=Bronze" style="margin-left:50px" method="post">
+                <p>
+                    <input type="submit" id="submit-gold" style="width:30%" name="Bronze" value="Bronze" />
+                </p>
+            </form>
+
+                <div id="response">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </div>
+        </div>
+        <div class="span2">
+            <br /><br />
+            <p>
+                <h3>Membership Description.</h3>
+
+            </p>
+            <p>
+                <a>For Business Profile</a>
+            </p>
+
+            <ul>
+                <li>Gold</li>
+                <li>Silver</li>
+            </ul><br />
+            <p>
+                <a>For Public Profile</a>
+            </p>
+            <ul>
+                <li>Bronze</li>
+            </ul>
+
+
+
+        </div>
+
+
+    </div>
+    @*Registration Section Ends Here*@
+</body>
+</html>
